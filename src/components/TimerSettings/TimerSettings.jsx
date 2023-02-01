@@ -29,8 +29,6 @@ function TimerSettings({min, sec, setter, setTimeBegin}) {
     }
 
 
-
-
     const settings = (
         <form className={classes.settingsForm}>
             <div className={classes.timeWrapper}>
@@ -46,7 +44,8 @@ function TimerSettings({min, sec, setter, setTimeBegin}) {
             </div>
             <Button type='submit' onClick={setTime}>Confirm</Button>
         </form>
-    )
+    );
+
 
     return (
         <div className={classes.wrapper}>

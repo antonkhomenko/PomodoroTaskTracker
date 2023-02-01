@@ -20,3 +20,17 @@ body {
     flex-direction: column;
     align-items: center;
 }
+
+.quote {
+    margin-top: 15px;
+    font-size: 14px;
+    color: gray;
+}
+
+.quote:before {
+    content: '----  ';
+}
+
+.quote:after {
+    content: '   ----';
+}

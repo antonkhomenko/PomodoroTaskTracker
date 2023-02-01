@@ -1,0 +1,16 @@
+.TaskItem {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 3px;
+}
+
+.text {
+    color: white;
+    display: inline-block;
+    width: -webkit-fill-available;
+    padding: 0 15px;
+    font-weight: lighter;
+}
