@@ -1,5 +1,5 @@
 import classes from './TimerLoader.module.css';
-import getPadTime from "../../helpers/getPadTime.js";
+import getPadTime from "../../../helpers/getPadTime.js";
 
 
 function TimerLoader({minutes, seconds, a, b, isStart}) {

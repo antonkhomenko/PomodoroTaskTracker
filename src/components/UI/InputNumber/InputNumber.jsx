@@ -1,6 +1,6 @@
 import classes from './InputNumber.module.css';
 import {useRef, useState} from "react";
-import getPadTime from "../../helpers/getPadTime.js";
+import getPadTime from "../../../helpers/getPadTime.js";
 
 
 function InputNumber({value, setValue}) {
