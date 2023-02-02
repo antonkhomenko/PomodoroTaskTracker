@@ -44,13 +44,15 @@ function Timer({chosenTask}) {
         <div className={classes.Timer}>
             <div className={classes.header}>
                 {chosenTask
-                ? <span>Working on: <span className={classes.chosenTask}>{chosenTask}</span></span>
-                : <span>Chose the task you want to work on</span>
+                ? <div className={classes.chosenTaskWrapper}>
+                    <span className={classes.chosenTaskWrapper__title}>Working on: </span>
+                    <span className={classes.chosenTaskWrapper__text}>{chosenTask}</span>
+                 </div>
+                : <div className={classes.chosenTaskWrapper}>Chose the task you want to work on</div>
                 }
-                <div>
-                    {/*{isStart && <Button onClick={reset} style={{margin: '0px 20px'}}>Reset</Button>}*/}
+                <div className={classes.control}>
                     {startBtnName !== 'Start' &&
-                        <Button onClick={reset} style={{margin: '0px 20px'}}>Reset</Button>
+                        <Button onClick={reset}>Reset</Button>
                     }
                     <Button onClick={startTimer}>{startBtnName}</Button>
                 </div>

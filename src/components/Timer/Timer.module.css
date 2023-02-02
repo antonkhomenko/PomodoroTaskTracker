@@ -11,6 +11,8 @@
     justify-content: space-between;
     align-items: center;
     margin-top: 30px;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .header > span {
@@ -19,7 +21,30 @@
     max-width: 328px;
 }
 
-.chosenTask {
-    color: gray;
-    font-size: 1em;
+.chosenTaskWrapper {
+    padding: 15px 55px;
+    background: black;
+    border: 3px solid;
+    box-shadow: 1px 1px 0 0 #bb86fc, 2px 2px 0 0 #bb86fc, 3px 3px 0 0 #bb86fc, 4px 4px 0 0 #bb86fc, 5px 5px 0 0 #bb86fc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
 }
+
+.chosenTaskWrapper__title {
+    font-weight: bold;
+    color: #bb86fc;
+}
+
+.chosenTaskWrapper__text {
+    color: white;
+    font-weight: lighter;
+}
+
+.control {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
