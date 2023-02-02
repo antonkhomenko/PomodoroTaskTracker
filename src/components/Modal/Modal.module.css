@@ -1,0 +1,59 @@
+.modal {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.modal__content {
+    width: 50%;
+    background-color: black;
+    border: 8px solid #bb86fc;
+    padding: 100px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.control {
+    display: flex;
+    gap: 30px;
+}
+
+.btn {
+    padding: 10px 25px;
+    border: 3px solid #bb86fc;
+    cursor: pointer;
+    background-color: black;
+    color: #bb86fc;
+    font-weight: bold;
+    box-shadow: 1px 1px 0 0 #bb86fc,
+    2px 2px 0 0 #bb86fc,
+    3px 3px 0 0 #bb86fc,
+    4px 4px 0 0 #bb86fc,
+    5px 5px 0 0 #bb86fc;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.btn:active {
+    box-shadow: 0px 0px 0px 0px #bb86fc;
+    top: 5px;
+    left: 5px;
+}
+
+.btn:focus {
+    outline: none;
+}
+
