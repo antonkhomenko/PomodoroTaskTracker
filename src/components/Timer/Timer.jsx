@@ -5,7 +5,7 @@ import TimerSettings from "../TimerSettings/TimerSettings.jsx";
 import {useEffect, useRef, useState} from "react";
 import useClearTimer from "../../hooks/useClearTimer.js";
 
-function Timer({chosenTask}) {
+function Timer({chosenTask, resetFunc}) {
 
     const [timeLeft, setTimeLeft] = useState(25 * 60);
     const minutes = Math.floor(timeLeft / 60);
@@ -37,6 +37,10 @@ function Timer({chosenTask}) {
         setTimeLeft(timeBegin);
         clearInterval(intervalRef.current);
     }
+
+    useEffect(() => {
+        resetFunc.current = reset;
+    }, [timeBegin]);
 
     const startBtnName = !isStart ? timeLeft !== timeBegin ? 'Continue' : 'Start' : 'Pause';
 

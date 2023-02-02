@@ -13,7 +13,8 @@ body {
 
 
 .App {
-    max-width: 50%;
+    width: 65%;
+    max-width: 830px;
     min-height: 100vh;
     margin: 0 auto;
     display: flex;

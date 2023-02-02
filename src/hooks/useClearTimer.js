@@ -6,6 +6,7 @@ export default function useClearTimer(timeLeft, setTimeLeft, timeBegin, interval
             clearInterval(intervalRef.current);
             setIsStart(false);
             setTimeLeft(timeBegin);
+            alert('finish task');
         }
     },[timeLeft])
 }

@@ -2,16 +2,20 @@ import classes from './TaskList.module.css';
 import TaskListSettings from "../TaskListSettings/TaskListSettings.jsx";
 import TaskItem from "../TaskItem/TaskItem.jsx";
 
-function TaskList({tasks, setTasks, chosenTask, setChosenTask}) {
+function TaskList({tasks, setTasks, chosenTask, setChosenTask, resetTimer}) {
 
     function deleteItem(task) {
         const filtratedTasks = tasks.filter(item => {
+            if(item.id === task.id && task.text === chosenTask) {
+                setChosenTask('');
+                resetTimer.current();
+            }
             return item.id !== task.id;
         });
         setTasks(filtratedTasks);
     }
 
-    function selectItem(task, event) {
+    function selectItem(task) {
        const filtratedTasks = tasks.map(item => {
            if(task.id === item.id) {
                if(item.isSelected) {
@@ -37,7 +41,7 @@ function TaskList({tasks, setTasks, chosenTask, setChosenTask}) {
                     return <TaskItem
                             task={t} key={t.id}
                             handleDelete={() => deleteItem(t)}
-                            handleChecked={(e) => selectItem(t, e)}
+                            handleChecked={() => selectItem(t)}
                     />
                 })}
             </form>

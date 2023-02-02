@@ -15,12 +15,17 @@ const data = [
 function App(props) {
     const [tasks, setTasks] = useState([...data]);
     const [chosenTask, setChosenTask] = useState('');
+    const resetTimer = useRef(null);
 
     return (
         <div className='App'>
             <span className='quote'>Stay focus 🎯</span>
-            <Timer chosenTask={chosenTask}/>
-            <TaskList tasks={tasks} setTasks={setTasks} chosenTask={chosenTask} setChosenTask={setChosenTask}/>
+            <Timer chosenTask={chosenTask} resetFunc={resetTimer}/>
+            <TaskList
+                tasks={tasks} setTasks={setTasks}
+                chosenTask={chosenTask} setChosenTask={setChosenTask}
+                resetTimer={resetTimer}
+            />
         </div>
     );
 }
