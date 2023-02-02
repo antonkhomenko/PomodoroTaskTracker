@@ -35,11 +35,13 @@ function TimerSettings({min, sec, setter, setTimeBegin}) {
                 <InputNumber
                     value={minutes}
                     setValue={setMinutes}
+                    position='left'
                 />
-                <span>:</span>
+                <span className={classes.timeDot}>:</span>
                 <InputNumber
                     value={seconds}
                     setValue={setSeconds}
+                    position='right'
                 />
             </div>
             <Button type='submit' onClick={setTime}>Confirm</Button>

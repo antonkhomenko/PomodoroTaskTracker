@@ -7,7 +7,7 @@ function TaskList({tasks, setTasks}) {
         <div className={classes.TaskList}>
             <TaskListSettings setTasks={setTasks}/>
             <div className={classes.TaskListWrapper}>
-                {tasks.map(t => <TaskItem task={t}/>)}
+                {tasks.map(t => <TaskItem task={t} key={t.id}/>)}
             </div>
         </div>
     );
