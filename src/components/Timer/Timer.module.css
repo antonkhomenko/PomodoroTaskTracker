@@ -22,10 +22,6 @@
 }
 
 .chosenTaskWrapper {
-    padding: 15px 55px;
-    background: black;
-    border: 3px solid;
-    box-shadow: 1px 1px 0 0 #bb86fc, 2px 2px 0 0 #bb86fc, 3px 3px 0 0 #bb86fc, 4px 4px 0 0 #bb86fc, 5px 5px 0 0 #bb86fc;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -48,7 +48,7 @@ function Timer({chosenTask}) {
                     <span className={classes.chosenTaskWrapper__title}>Working on: </span>
                     <span className={classes.chosenTaskWrapper__text}>{chosenTask}</span>
                  </div>
-                : <div className={classes.chosenTaskWrapper}>Chose the task you want to work on</div>
+                : <div className={classes.chosenTaskWrapper} style={{fontWeight: 'bold'}}>Chose the task you want to work on</div>
                 }
                 <div className={classes.control}>
                     {startBtnName !== 'Start' &&

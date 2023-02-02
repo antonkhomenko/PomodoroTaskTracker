@@ -9,10 +9,17 @@ function TaskItem({task, handleDelete, handleChecked}) {
 
     return (
         <div className={classes.TaskItem}>
-            <input type="radio" name='chosen' checked={isSelected} onClick={handleChecked}/>
-            <span className={classes.text}>
-                {text}
-            </span>
+            <label htmlFor={id} className={classes.fakeInput}>
+                <input
+                    type="radio" name='chosen'
+                    checked={isSelected} onClick={handleChecked}
+                    className={classes.chosenItemInput}
+                    id={id}
+                />
+                <span className={classes.text}>
+                    {text}
+                </span>
+            </label>
             <Button style={{backgroundColor: '#b74d4d', fontWeight: 'bold'}} onClick={handleDelete}>X</Button>
         </div>
     );

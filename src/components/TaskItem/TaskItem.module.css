@@ -10,8 +10,50 @@
 .text {
     color: white;
     display: inline-block;
-    width: -webkit-fill-available;
+    /*width: -webkit-fill-available;*/
     padding: 0 15px;
     font-weight: lighter;
+    position: relative;
+    line-height: 25.5px;
 }
+
+.text:before,
+.text:after {
+    content: '';
+}
+
+label span:before {
+    border: 1px solid white;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+label span:after {
+    background: #bb86fc;
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    top: 4px;
+    left: 19px;
+    transition: 300ms;
+    opacity: 0;
+}
+
+label input:checked+span:after {
+    opacity: 1;
+}
+
+.chosenItemInput {
+    display: none;
+}
+
+.fakeInput {
+    display: inline-block;
+    cursor: pointer;
+}
+
+
 
