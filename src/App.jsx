@@ -19,8 +19,8 @@ function App(props) {
     return (
         <div className='App'>
             <span className='quote'>Stay focus 🎯</span>
-            <Timer/>
-            <TaskList tasks={tasks} setTasks={setTasks}/>
+            <Timer chosenTask={chosenTask}/>
+            <TaskList tasks={tasks} setTasks={setTasks} chosenTask={chosenTask} setChosenTask={setChosenTask}/>
         </div>
     );
 }
