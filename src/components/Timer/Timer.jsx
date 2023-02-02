@@ -44,7 +44,7 @@ function Timer({chosenTask}) {
         <div className={classes.Timer}>
             <div className={classes.header}>
                 {chosenTask
-                ? <span>Working on {chosenTask}</span>
+                ? <span>Working on: <span className={classes.chosenTask}>{chosenTask}</span></span>
                 : <span>Chose the task you want to work on</span>
                 }
                 <div>

@@ -2,16 +2,14 @@ import classes from './TaskItem.module.css';
 import Button from "../UI/Button/Button.jsx";
 
 
-function TaskItem({task, handleDelete, handleSelect}) {
+function TaskItem({task, handleDelete, handleChecked}) {
 
     const {id, isSelected, text} = task;
 
 
-
-
     return (
         <div className={classes.TaskItem}>
-            <input type="checkbox" checked={isSelected} onChange={handleSelect}/>
+            <input type="radio" name='chosen' checked={isSelected} onChange={handleChecked}/>
             <span className={classes.text}>
                 {text}
             </span>

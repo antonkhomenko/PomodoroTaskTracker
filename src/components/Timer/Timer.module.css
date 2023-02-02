@@ -18,3 +18,8 @@
     font-weight: bold;
     max-width: 328px;
 }
+
+.chosenTask {
+    color: gray;
+    font-size: 1em;
+}
