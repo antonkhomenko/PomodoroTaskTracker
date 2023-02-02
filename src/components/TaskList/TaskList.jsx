@@ -13,10 +13,16 @@ function TaskList({tasks, setTasks, chosenTask, setChosenTask}) {
 
     function selectItem(task, event) {
        const filtratedTasks = tasks.map(item => {
-           item.isSelected = false;
-           if(item.id === task.id) {
-               item.isSelected = true;
-               setChosenTask(item.text);
+           if(task.id === item.id) {
+               if(item.isSelected) {
+                   item.isSelected = false;
+                   setChosenTask('');
+               } else {
+                   item.isSelected = true;
+                   setChosenTask(item.text);
+               }
+           } else {
+               item.isSelected = false;
            }
            return item;
        });

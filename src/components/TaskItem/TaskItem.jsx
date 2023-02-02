@@ -9,7 +9,7 @@ function TaskItem({task, handleDelete, handleChecked}) {
 
     return (
         <div className={classes.TaskItem}>
-            <input type="radio" name='chosen' checked={isSelected} onChange={handleChecked}/>
+            <input type="radio" name='chosen' checked={isSelected} onClick={handleChecked}/>
             <span className={classes.text}>
                 {text}
             </span>
