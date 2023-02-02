@@ -21,6 +21,10 @@ function Timer({chosenTask, resetFunc, activeModal}) {
     useClearTimer(timeLeft, setTimeLeft, timeBegin, intervalRef, setIsStart, activeModal);
 
     function startTimer() {
+        if(!chosenTask) {
+            alert('chose your task first');
+            return;
+        }
         if(isStart) {
             clearInterval(intervalRef.current);
             setIsStart(false);

@@ -27,7 +27,7 @@ function Modal(
 
     return (
         <div className={classes.modal} onClick={() => setActive(false)}>
-            <div className={classes.modal__content}>
+            <div className={classes.modal__content} onClick={(e) => e.stopPropagation()}>
                 <h1>Are you finished the task ?</h1>
                 <div className={classes.control}>
                     <button className={classes.btn} onClick={taskComplete}>

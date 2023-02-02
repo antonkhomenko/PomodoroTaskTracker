@@ -26,6 +26,7 @@ function TimerSettings({min, sec, setter, setTimeBegin}) {
         const newTime = minutes * 60 + seconds;
         setter(newTime);
         setTimeBegin(newTime);
+        setShowSettings(false);
     }
 
 
