@@ -66,7 +66,11 @@ function Timer({chosenTask, resetFunc, activeModal}) {
                 </div>
             </div>
             <TimerLoader minutes={minutes} seconds={seconds} a={timeBegin} b={timeLeft} isStart={isStart}/>
-            <TimerSettings min={minutes} sec={seconds} setter={setTimeLeft} setTimeBegin={setTimeBegin}/>
+            <TimerSettings
+                min={minutes} sec={seconds}
+                setter={setTimeLeft} setTimeBegin={setTimeBegin}
+                isStart={isStart}
+            />
         </div>
     );
 }

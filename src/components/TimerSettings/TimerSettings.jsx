@@ -4,7 +4,7 @@ import Button from "../UI/Button/Button.jsx";
 import InputNumber from "../UI/InputNumber/InputNumber.jsx";
 
 
-function TimerSettings({min, sec, setter, setTimeBegin}) {
+function TimerSettings({min, sec, setter, setTimeBegin, isStart}) {
 
     const [showSettings, setShowSettings] = useState(false);
 
@@ -23,6 +23,7 @@ function TimerSettings({min, sec, setter, setTimeBegin}) {
 
     function setTime(e) {
         e.preventDefault();
+        if(isStart) return;
         const newTime = minutes * 60 + seconds;
         setter(newTime);
         setTimeBegin(newTime);
