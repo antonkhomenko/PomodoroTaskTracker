@@ -3,7 +3,7 @@ import {useEffect} from "react";
 import Button from "../UI/Button/Button.jsx";
 
 function Modal(
-    {active, setActive, tasks, setTasks, chosenTask, setChosenTask}) {
+    {active, setActive, tasks, dispatch, chosenTask, setChosenTask}) {
 
 
     useEffect(() => {
@@ -14,8 +14,10 @@ function Modal(
     }, []);
 
     function taskComplete() {
-        const filtratedTasks = tasks.filter(item => item.text !== chosenTask);
-        setTasks(filtratedTasks);
+        dispatch({
+            type: 'removeCompletedTask',
+            chosenTask: chosenTask,
+        });
         setChosenTask('');
         setActive(false);
     }

@@ -3,13 +3,16 @@ import Button from "../UI/Button/Button.jsx";
 import {useState} from "react";
 
 
-function TaskListSettings({setTasks}) {
+function TaskListSettings({dispatch}) {
 
     const [text, setText] = useState('');
 
     function handleSubmit(e) {
         e.preventDefault();
-        setTasks(prev => [...prev, {id: Date.now(), isSelected: false, text: text}]);
+        dispatch({
+            type: 'addItem',
+            text: text,
+        });
         setText('');
     }
 

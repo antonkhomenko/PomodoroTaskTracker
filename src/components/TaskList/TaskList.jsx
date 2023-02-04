@@ -2,17 +2,17 @@ import classes from './TaskList.module.css';
 import TaskListSettings from "../TaskListSettings/TaskListSettings.jsx";
 import TaskItem from "../TaskItem/TaskItem.jsx";
 
-function TaskList({tasks, setTasks, chosenTask, setChosenTask, resetTimer}) {
+function TaskList({tasks, dispatch, chosenTask, setChosenTask, resetTimer}) {
 
     function deleteItem(task) {
-        const filtratedTasks = tasks.filter(item => {
-            if(item.id === task.id && task.text === chosenTask) {
-                setChosenTask('');
-                resetTimer.current();
-            }
-            return item.id !== task.id;
+        if(task.text === chosenTask) {
+            setChosenTask('');
+            resetTimer.current();
+        }
+        dispatch({
+            type: 'deleteItem',
+            id: task.id,
         });
-        setTasks(filtratedTasks);
     }
 
     function selectItem(task) {
@@ -30,12 +30,15 @@ function TaskList({tasks, setTasks, chosenTask, setChosenTask, resetTimer}) {
            }
            return item;
        });
-       setTasks(filtratedTasks);
+       dispatch({
+           type: 'selectItem',
+           item: filtratedTasks,
+       });
     }
 
     return (
         <div className={classes.TaskList}>
-            <TaskListSettings setTasks={setTasks}/>
+            <TaskListSettings dispatch={dispatch}/>
             <form className={classes.TaskListWrapper}>
                 {tasks.map(t => {
                     return <TaskItem
