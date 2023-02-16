@@ -9,6 +9,8 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "build": "vite build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "preview": "vite preview"
   },
   "dependencies": {
